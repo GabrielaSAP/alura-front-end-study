@@ -1,4 +1,4 @@
-p, h1 {
+p, .titulo-centralizado {
     text-align:center
 }
 body{
@@ -7,6 +7,9 @@ body{
 .principal{
     background: #CCCCCC;
     padding: 30px;
+}
+.titulo-principal{
+    padding-left: 20px;
 }
 em strong {
     color: #FF0000;
@@ -23,9 +26,6 @@ em strong {
 .beneficios{
     background: #ffffff;
     padding: 20px;
-}
-h2 {
-    text-align: center;
 }
 ul {
     display: inline-block;
