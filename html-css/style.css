@@ -139,6 +139,7 @@ td, th{
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
+    color: rgba(0,0,0,0.3);
 }
 .principal {
     padding: 3em 0;
