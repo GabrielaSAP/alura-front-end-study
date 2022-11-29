@@ -1,0 +1,8 @@
+.cartao--destaque{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+}
+.cartao__imagem--destaque{
+    width: auto;
+}
