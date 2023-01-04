@@ -19,4 +19,17 @@ body{
 }
 .container{
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.container__botao{
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 1em;
+    color: var(--branco-principal);
+    display: block;
+}
+.botao__secundario{
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
 }
