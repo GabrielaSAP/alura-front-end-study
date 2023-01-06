@@ -20,6 +20,8 @@ body{
     background: url(/img/Background.png);
     background-size: contain;
     background-repeat: no-repeat;
+    align-items: center;
+    text-align: center;
 }
 .container{
     height: 100vh;
