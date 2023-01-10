@@ -95,3 +95,24 @@ body{
     font-size: 32px;
     color: var(--branco-principal);
 }
+.rodape{
+    text-align: center;
+}
+.rodape__lista{
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+.lista__link{
+    list-style-type: none;
+    margin: 0 0.7em;
+}
+.lista__link a{
+    color: var(--branco-principal);
+    text-decoration: none;
+}
+.rodape__texto{
+    font-size: 14px;
+    color: var(--cinza-secundario);
+    margin: 0 3em 2em;
+}
