@@ -97,22 +97,21 @@ body{
 }
 .rodape{
     text-align: center;
+    margin: 5em 3em;
 }
 .rodape__lista{
     display: flex;
     justify-content: center;
-    margin: 2em 0;
-}
-.lista__link{
     list-style-type: none;
-    margin: 0 0.7em;
+    margin-top: 1em;
 }
 .lista__link a{
     color: var(--branco-principal);
     text-decoration: none;
+    margin-left: 1em;
 }
 .rodape__texto{
     font-size: 14px;
     color: var(--cinza-secundario);
-    margin: 0 3em 2em;
+    margin: 1em 0;
 }
