@@ -48,3 +48,42 @@
 .container__botao{
     display: none;
 }
+.container__titulo{
+    display: none;
+}
+.opcoes{
+    display: none;
+}
+.container__imagem-transparente{
+    display: block;
+}
+@media screen and (min-width: 1024px) {
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundario);
+        font-size: 30px;
+    }
+    .container__titulo{
+        display: block;
+        font-weight: 400;
+    }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+    .opcoes{
+        display: flex;
+    }
+    .opcoes__item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem-transparente{
+        display: none;
+    }
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+}
