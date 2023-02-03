@@ -14,6 +14,7 @@
     row-gap: .5rem;
 }
 
+/* Destaques */
 .destaques {
     display: flex;
     align-items: center;
@@ -21,6 +22,19 @@
 }
 .destaques__barra{
     flex-grow: 1;
+}
+
+/* Eventos */
+.eventos__lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.eventos__item{
+    flex-grow: 1;
+    max-width: 400px;
 }
 
 @media (min-width: 720px) {
@@ -34,6 +48,11 @@
         flex-wrap: wrap;
         column-gap: 1.5rem;
         row-gap: 1rem;
+    }
+
+    /* Eventos */
+    .eventos__lista{
+        justify-content: end;
     }
 }
 
