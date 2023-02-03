@@ -1,3 +1,4 @@
+/* Cabeçalho */
 .menu {
     display: flex;
     justify-content: space-evenly;
@@ -5,21 +6,39 @@
     flex-wrap: wrap;
     column-gap: 33px;
 }
+
+/* Categorias */
 .categorias__lista {
     display: flex;
     flex-direction: column;
     row-gap: .5rem;
 }
 
-@media (min-width: 720px) {
+.destaques {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.destaques__barra{
+    flex-grow: 1;
+}
 
+@media (min-width: 720px) {
+    /* Cabeçalho */
     .menu {
         column-gap: 75px;
+    }
+
+    /* Categorias */
+    .categorias__lista{
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
     }
 }
 
 @media (min-width: 1440px) {
-
+    /* Cabeçalho */
     .menu {
         column-gap: 105px;
         flex-wrap: nowrap;
