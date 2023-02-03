@@ -37,6 +37,19 @@
     max-width: 400px;
 }
 
+/* Agenda */
+.agenda__lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.agenda__item{
+    flex-grow: 1;
+    max-width: 400px;
+}
+
 @media (min-width: 720px) {
     /* Cabeçalho */
     .menu {
@@ -52,6 +65,11 @@
 
     /* Eventos */
     .eventos__lista{
+        justify-content: end;
+    }
+
+    /* Agenda */
+    .agenda__lista{
         justify-content: end;
     }
 }
