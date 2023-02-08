@@ -13,7 +13,7 @@
 @media screen and (min-width: 720px) {
 
     .banner{
-        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        grid-template-columns: calc(50% - 0.75rem);
         column-gap: 1.5rem;
     }
     .banner img:nth-child(1){
