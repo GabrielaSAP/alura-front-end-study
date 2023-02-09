@@ -61,3 +61,29 @@
         grid-row: 1/3;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .categorias{
+        display: grid;
+        grid-template-areas: 
+            "categoriasTitulo categoriasTitulo"
+            "categoriasLista destaquesTitulo"
+            "categoriasLista destaquesImagem";
+        grid-template-columns: calc(50% - 0.75rem);
+        grid-template-rows: auto 1fr auto;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+    .categorias__titulo{
+        grid-area: categoriasTitulo;
+    }
+    .categorias__lista{
+        grid-area: categoriasLista;
+    }
+    .categorias__destaques{
+        grid-area: destaquesTitulo;
+    }
+    .categorias__imagem{
+        grid-area: destaquesImagem;
+    }
+}
