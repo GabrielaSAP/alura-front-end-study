@@ -9,6 +9,8 @@ const peso = tdPeso.textContent;
 const tdAltura = paciente.querySelector(".info-altura");
 const altura = tdAltura.textContent;
 
+const tdImc = paciente.querySelector(".info-imc");
+
 const imc = peso / (altura * altura);
 
-console.log(imc)
+tdImc.textContent = imc
