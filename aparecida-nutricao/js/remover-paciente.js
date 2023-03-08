@@ -1,11 +1,8 @@
 let tabelaPacientes = document.querySelector("#tabela-pacientes");
 
 tabelaPacientes.addEventListener("dblclick", function(event){
-    event.target.parentNode.remove();
+    event.target.parentNode.classList.add("fadeOut");
+    setTimeout(function(){
+        event.target.parentNode.remove();
+    },500)
 });
-
-// tabelaPacientes.forEach(function(paciente){
-//     paciente.addEventListener("dblclick", function(){
-//         this.remove();
-//     });
-// })
