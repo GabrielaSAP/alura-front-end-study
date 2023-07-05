@@ -16,6 +16,7 @@ import ITarefa from '../interfaces/ITarefa';
 import Box from '../components/Box.vue';
 
 export default defineComponent({
+// eslint-disable-next-line vue/multi-word-component-names
 name: 'App',
 components: {
     Formulario, Tarefa, Box
