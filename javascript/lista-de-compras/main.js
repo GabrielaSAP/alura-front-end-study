@@ -46,7 +46,7 @@ function mostrarItem() {
 
     inputsCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
-            console.log('Fui clicado!')
+            console.log(evento.target.parentElement.parentElement.getAttribute('data-value'))
         })
     })
 }
