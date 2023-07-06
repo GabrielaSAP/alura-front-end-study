@@ -18,7 +18,8 @@ function salvarItem() {
         alert('Item já existe')
     } else {
         listaDeItens.push({
-            valor: comprasItem
+            valor: comprasItem,
+            checar: false
         }) 
     }
 
@@ -46,7 +47,9 @@ function mostrarItem() {
 
     inputsCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
-            console.log(evento.target.parentElement.parentElement.getAttribute('data-value'))
+            const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value')
+            listaDeItens[valorDoElemento].checar = evento.target.checked
+            console.log(listaDeItens[valorDoElemento].checar)
         })
     })
 }
