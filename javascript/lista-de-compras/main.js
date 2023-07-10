@@ -6,6 +6,10 @@ const itensInput = document.getElementById('receber-item')
 const ulItens = document.getElementById('lista-de-itens')
 const ulItensComprados = document.getElementById('itens-comprados')
 
+function atualizaLocalStorage() {
+    localStorage.setItem('listaDeItens', JSON.stringify(listaDeItens))
+}
+
 form.addEventListener('submit', function (evento) {
     evento.preventDefault()
     salvarItem()
@@ -91,6 +95,8 @@ function mostrarItem() {
             console.log(itemAEditar)
         })
     })
+
+    atualizaLocalStorage()
 }
 
 function salvarEdicao() {
