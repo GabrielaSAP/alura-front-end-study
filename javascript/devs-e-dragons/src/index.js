@@ -1,3 +1,5 @@
+import { Personagem } from "./modules/personagem.js"
+
 // const personagemPedrinho = {
 //     nome: 'Pedrinho',
 //     vida: 7,
@@ -20,16 +22,9 @@ const personagemAna = {
     mana: 10
 }
 
-class Personagem {
-    nome
-    vida
-    mana
-    nivel
-    tipo
-    descricao   
-}
-
 const personagemPedrinho = new Personagem()
 personagemPedrinho.nome = 'Pedrinho'
 personagemPedrinho.mana = 12
 personagemPedrinho.vida = 7
+
+console.log(personagemPedrinho)
