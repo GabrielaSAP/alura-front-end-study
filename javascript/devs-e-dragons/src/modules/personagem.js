@@ -13,8 +13,8 @@ export class Personagem {
 
     obterInsignia() {
         if (this.nivel >= 5) {
-            return `${this.tipo} implacável`
+            return `${this.constructor.tipo} implacável`
         }
-        return `${this.tipo} iniciante`
+        return `${this.constructor.tipo} iniciante`
     }
 }
