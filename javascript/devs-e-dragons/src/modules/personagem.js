@@ -12,7 +12,7 @@ export class Personagem {
     }
 
     get nivel() {
-        return this.#level
+        return this.#nivel
     }
 
     obterInsignia() {
