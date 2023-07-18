@@ -6,9 +6,13 @@ export class Personagem {
     tipo
     descricao
 
-    constructor(nome, nivel) {
+    constructor(nome) {
         this.nome = nome
-        this.#nivel = nivel
+        this.#nivel = 1
+    }
+
+    get nivel() {
+        return this.#level
     }
 
     obterInsignia() {
