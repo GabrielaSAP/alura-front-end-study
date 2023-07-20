@@ -9,3 +9,5 @@ function imprimeCotacao(nome, valor) {
         lista.appendChild(listaItem)
     }
 }
+
+export default imprimeCotacao;
