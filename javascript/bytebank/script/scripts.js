@@ -44,10 +44,19 @@ const graficoParaIene = new Chart(graficoIene, {
     type: 'line',
     data: {
         labels: [],
-        dataSets: [{
+        datasets: [{
             label: 'Iene',
             data: [],
             borderWidth: 1
         }]
     }
+})
+
+let workerIene = new Worker("./script/workers/workerIene.js");
+workerIene.postMessage('iene');
+workerIene.addEventListener('message', event => {
+    let tempo = geraHorario();
+    let valor = event.data.ask;
+    adicionarDados(graficoParaIene, tempo, valor);
+    imprimeCotacao('iene', valor);
 })
