@@ -31,3 +31,10 @@ function adicionarDados(grafico, legenda, dados) {
 
 let workerDolar = new Worker('./script/workers/workerDolar.js');
 workerDolar.postMessage('usd');
+
+workerDolar.addEventListener('message', event => {
+    let tempo = geraHorario();
+    let valor = event.data.ask;
+    imprimeCotacao('dolar', valor);
+    adicionarDados(graficoParaDolar, tempo, valor);
+})

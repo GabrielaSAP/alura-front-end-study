@@ -1,5 +1,5 @@
 async function conectaAPI() {
-    const conecta = await fetch('https://eoconomia.awesomeapi.com.br/last/USD-BRL')
+    const conecta = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL')
     const conectaTraduzido = await conecta.json();
     postMessage(conectaTraduzido.USDBRL)
 }
