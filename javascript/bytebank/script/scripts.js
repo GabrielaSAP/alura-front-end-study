@@ -59,3 +59,25 @@ workerIene.addEventListener('message', event => {
     adicionarDados(graficoParaIene, tempo, valor);
     selecionaCotacao('iene', valor);
 })
+
+const graficoPeso = document.getElementById('graficoPeso');
+const graficoParaPeso = new Chart(graficoPeso, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            label: 'Peso',
+            data: [],
+            borderWidth: 1
+        }]
+    }
+})
+
+let workerPeso = new Worker("./script/workers/workerPeso.js");
+workerPeso.postMessage('peso');
+workerPeso.addEventListener('message', event => {
+    let tempo = geraHorario();
+    let valor = event.data.ask;
+    adicionarDados(graficoParaPeso, tempo, valor);
+    selecionaCotacao('peso', valor)
+})

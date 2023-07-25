@@ -1,5 +1,6 @@
 .dadosDolar,
-.dadosIene {
+.dadosIene,
+.dadosPeso {
     margin: 3em auto;
     padding: 2em;
     display: flex;
