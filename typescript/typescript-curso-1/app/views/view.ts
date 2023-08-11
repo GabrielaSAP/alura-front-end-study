@@ -1,4 +1,4 @@
-export class View {
+export abstract class View<T> {
 
     protected elemento: HTMLElement;
 
@@ -6,12 +6,10 @@ export class View {
         this.elemento = document.querySelector(seletor);
     }
 
-    update(model: string): void {
+    update(model: T): void {
         const template = this.template(model);
         this.elemento.innerHTML = template;
     }
 
-    template(model: string): string {
-        throw Error('Classe filha precisa implementar o método template');
-    }
+    abstract template(model: T): string;
 }
