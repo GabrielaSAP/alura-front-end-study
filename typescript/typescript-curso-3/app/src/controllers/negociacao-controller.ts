@@ -1,8 +1,8 @@
-import { NegociacoesView } from './../views/negociacoes-view.js';
-import { Negociacao } from "../models/negociacao.js";
-import { Negociacoes } from "../models/negociacoes.js";
-import { MensagemView } from '../views/mensagem-view.js';
 import { DiasDaSemana } from '../enums/dias-da-semana.js';
+import { Negociacao } from '../models/negociacao.js';
+import { Negociacoes } from '../models/negociacoes.js';
+import { MensagemView } from '../views/mensagem-view.js';
+import { NegociacoesView } from '../views/negociacoes-view.js';
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
@@ -20,24 +20,33 @@ export class NegociacaoController {
     }
 
     public adiciona(): void {
+        const t1 = performance.now();
+        /*
+            Zé, você já viu isso?
+        */
         const negociacao = Negociacao.criaDe(
-            this.inputData.value,
+            this.inputData.value, 
             this.inputQuantidade.value,
             this.inputValor.value
         );
+     
         if (!this.ehDiaUtil(negociacao.data)) {
-            this.mensagemView.update('Apenas negociações em dias úteis são aceitas');
-            return;
+            this.mensagemView
+                .update('Apenas negociações em dias úteis são aceitas');
+            return ;
         }
 
         this.negociacoes.adiciona(negociacao);
         this.limparFormulario();
         this.atualizaView();
+
+        const t2 = performance.now();
+        console.log(`Tempo de execução do método adiciona: ${(t2 - t1)/1000} segundos`);
     }
 
     private ehDiaUtil(data: Date) {
-        return data.getDay() > DiasDaSemana.DOMINGO && 
-               data.getDay() < DiasDaSemana.SABADO;
+        return data.getDay() > DiasDaSemana.DOMINGO 
+            && data.getDay() < DiasDaSemana.SABADO;
     }
 
     private limparFormulario(): void {
