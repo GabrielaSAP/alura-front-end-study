@@ -7,9 +7,10 @@ import {
     ALTERA_PROJETO, 
     ATUALIZA_TAREFA, 
     EXCLUIR_PROJETO, 
+    NOTIFICAR, 
     REMOVE_TAREFA } from "./tipo-mutacoes";
 import ITarefa from "@/interfaces/ITarefa";
-import { INotificacao, TipoNotificacao } from "@/interfaces/INotificacao";
+import { INotificacao } from "@/interfaces/INotificacao";
 
 interface Estado {
     projetos: IProjeto[],
@@ -23,26 +24,7 @@ export const store = createStore<Estado>({
     state: {
         projetos: [],
         tarefas: [],
-        notificacoes: [
-            {
-                id: 1,
-                texto: 'Uma notificação de sucesso',
-                titulo: 'sucesso',
-                tipo: TipoNotificacao.SUCESSO
-            },
-            {
-                id: 2,
-                texto: 'Uma notificação de atencao',
-                titulo: 'atencao',
-                tipo: TipoNotificacao.ATENCAO
-            },
-            {
-                id: 3,
-                texto: 'Uma notificação de falha',
-                titulo: 'falha',
-                tipo: TipoNotificacao.FALHA
-            }
-        ]
+        notificacoes: []
     },
     mutations: {
         [ADICIONA_PROJETO] (state, nomeDoProjeto: string) {
@@ -69,6 +51,14 @@ export const store = createStore<Estado>({
         },
         [REMOVE_TAREFA] (state, id: string) {
             state.tarefas = state.tarefas.filter(p => p.id != id)
+        },
+        [NOTIFICAR] (state, novaNotificacao: INotificacao) {
+            novaNotificacao.id = new Date().getTime()
+            state.notificacoes.push(novaNotificacao)
+
+            setTimeout(() => {
+                state.notificacoes = state.notificacoes.filter(notificacao => notificacao.id != novaNotificacao.id)
+            }, 3000)
         }
     }
 })
