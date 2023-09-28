@@ -6,12 +6,13 @@ import { ADICIONA_PROJETO,
     ALTERA_PROJETO, 
     ATUALIZA_TAREFA, 
     DEFINIR_PROJETOS, 
+    DEFINIR_TAREFAS, 
     EXCLUIR_PROJETO, 
     NOTIFICAR, 
     REMOVE_TAREFA } from "./tipo-mutacoes";
 import ITarefa from "@/interfaces/ITarefa";
 import { INotificacao } from "@/interfaces/INotificacao";
-import { ALTERAR_PROJETO, CADASTRAR_PROJETO, OBTER_PROJETOS, REMOVER_PROJETO } from "./tipo-acoes";
+import { ALTERAR_PROJETO, CADASTRAR_PROJETO, OBTER_PROJETOS, OBTER_TAREFAS, REMOVER_PROJETO } from "./tipo-acoes";
 import http from "@/http"
 
 interface Estado {
@@ -45,6 +46,9 @@ export const store = createStore<Estado>({
         },
         [DEFINIR_PROJETOS] (state, projetos: IProjeto[]) {
             state.projetos = projetos
+        },
+        [DEFINIR_TAREFAS] (state, tarefas: ITarefa[]) {
+            state.tarefas = tarefas
         },
         [ADICIONA_TAREFA] (state, tarefa: ITarefa) {
             tarefa.id = new Date().toISOString()
@@ -82,7 +86,11 @@ export const store = createStore<Estado>({
         [REMOVER_PROJETO] ({ commit }, id: string) {
             return http.delete(`/projetos/${id}`)
                 .then(() => commit(EXCLUIR_PROJETO, id))
-        }
+        },
+        [OBTER_TAREFAS] ({ commit }) {
+            http.get('tarefas')
+                .then(resposta => console.log(DEFINIR_TAREFAS, resposta.data))
+        },
     }
 })
 
