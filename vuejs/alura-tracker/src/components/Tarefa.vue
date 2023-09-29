@@ -1,6 +1,6 @@
 <template>
     <Box>
-        <div class="columns">
+        <div class="columns clicavel" @click="tarefaClicada">
             <div class="column is-4">
                 {{ tarefa.descricao || 'Tarefa sem descrição' }}
             </div>
@@ -14,26 +14,34 @@
     </Box>
 </template>
 <script lang="ts">
-    import { defineComponent, PropType } from 'vue';
-    import Cronometro from './Cronometro.vue';
-    import ITarefa from '@/interfaces/ITarefa';
-    import Box from './Box.vue';
+import { defineComponent, PropType } from 'vue';
+import Cronometro from './Cronometro.vue';
+import ITarefa from '@/interfaces/ITarefa';
+import Box from './Box.vue';
 
-    export default defineComponent({
-        // eslint-disable-next-line vue/multi-word-component-names
-        name: 'Tarefa',
-        components: {
-            Cronometro, Box
-        },
-        props: {
-            tarefa: {
-                type: Object as PropType<ITarefa>,
-                required: true
-            }
+export default defineComponent({
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'Tarefa',
+    emits: ['aoTarefaClicada'],
+    components: {
+        Cronometro, Box
+    },
+    props: {
+        tarefa: {
+            type: Object as PropType<ITarefa>,
+            required: true
         }
-    })
+    },
+    methods: {
+        tarefaClicada() : void {
+            this.$emit('aoTarefaClicada', this.tarefa)
+        }
+    }
+})
 </script>
 
 <style scoped>
-    
+    .clicavel {
+        cursor: pointer;
+    }
 </style>
